@@ -1,0 +1,49 @@
+import React, { FC } from "react";
+import { Box, Theme, Typography } from "@mui/material";
+import Image from "next/image";
+
+
+export interface IndustryProps {
+  item?: string | number;
+  count?: string;
+  image?: string;
+}
+
+const Industry: FC<IndustryProps> = ({ item, count, image }) => {
+
+  return (
+    <div>
+      <Box
+        mt={4}
+        p={4}
+        sx={{
+          background: "#f9f9f9", 
+          borderRadius: "8px",
+          color: "black",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", 
+          width: "90%",
+          maxWidth: "600px", 
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Box flex="1">
+          <Typography variant="h4" color="initial">
+            {count}
+          </Typography>
+          <Typography variant="h5" color="initial">
+            {item}
+          </Typography>
+        </Box>
+        <Box flex="1" display="flex" justifyContent="center" alignItems="center">
+          <Image src={image!} alt="image" height={200} width={300} />
+        </Box>
+      </Box>
+    </div>
+  );
+};
+
+export default Industry;
