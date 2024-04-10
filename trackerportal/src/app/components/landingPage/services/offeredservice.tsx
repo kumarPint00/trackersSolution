@@ -27,7 +27,7 @@ const Offeredservice: FC<OfferedserviceProps> = ({ main, img, body }) => {
 
   return (
     <BoxTop>
-      <Image src={img!} height={50} width={50} alt="webdev" sx={{marginBottom: "10px"}} />
+      <Image src={img!} height={50} width={50} alt="webdev" />
       <Typography variant="h3" color="initial" align="center" gutterBottom>
         {main}
       </Typography>

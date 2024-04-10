@@ -1,11 +1,9 @@
 'use client';
 import React, { FC } from 'react'
 import {Theme} from '@mui/material'
- export interface PageProps {
-    text?: string
-}
 
-const page: FC<PageProps> = ( props ) => {
+
+const page = ( ) => {
 
   return (
     <div>

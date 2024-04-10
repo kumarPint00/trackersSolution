@@ -1,7 +1,6 @@
 'use client';
 import React, { FC } from 'react'
 import {Theme} from '@mui/material'
-import {makeStyles} from 'tss-react/mui'
 import Header from './topbar/header/Header'
 import ServicesOffered from './services/ServicesOffered';
 import Industries from './industries/Industries';
