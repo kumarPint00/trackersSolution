@@ -31,6 +31,7 @@ export interface FooterProps {
 }
 
 const Footer: FC<FooterProps> = (props) => {
+  console.log("git check")
   return (
     <MainBox>
       <Container maxWidth="xl">
