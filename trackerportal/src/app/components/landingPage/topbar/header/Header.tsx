@@ -1,11 +1,8 @@
-"use client";
 import React, { FC, useState } from "react";
 import {
-  Theme,
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
   Grid,
   Drawer,
   List,
@@ -14,22 +11,37 @@ import {
   useMediaQuery,
   styled,
 } from "@mui/material";
-  
 import { Menu } from "@mui/icons-material";
 import Image from "next/image";
 import logo from "../../../../../../public/logo.svg";
 import Link from "next/link";
 
 const DrawerServices = styled(Drawer)(({ theme }) => ({
-  width:"60%"
-}))
+  width: "60%",
+}));
 
+const HeaderNavlinks = styled(Link)(({ theme }) => ({
+  fontSize: "17px",
+  fontWeight: 600,
+  fontFamily: "system-ui",
+}));
+
+const MainAppBar = styled(AppBar)(({ theme }) => ({
+  color: "black",
+  backgroundColor: "white",
+  position: "fixed",
+}));
+const NavlinkGrid = styled(Grid)(({ theme }) => ({
+  justifyContent: "center",
+  alignItems: "center",
+  alignContent: "stretch",
+  paddingLeft: "20px",
+}));
 export interface HeaderProps {
   text?: string;
 }
 
 const Header: FC<HeaderProps> = (props) => {
-  
   const isMobile = useMediaQuery("(max-width:600px)");
 
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -40,10 +52,7 @@ const Header: FC<HeaderProps> = (props) => {
 
   return (
     <>
-      <AppBar
-        position="fixed"
-        sx={{ color: "black", backgroundColor: "white" }}
-      >
+      <MainAppBar>
         <Toolbar>
           {isMobile && (
             <IconButton
@@ -63,34 +72,34 @@ const Header: FC<HeaderProps> = (props) => {
               container
               spacing={{ xs: 1, md: 2 }}
               direction={{ xs: "column", md: "row" }}
+              wrap="wrap"
               justifyContent="center"
               alignItems="center"
               alignContent="stretch"
-              wrap="wrap"
               paddingLeft={20}
             >
               <Grid item xs={12} md={2}>
-                <Link href="/">HOME</Link>
+                <HeaderNavlinks href="/">HOME</HeaderNavlinks>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/services">SERVICES</Link>
+                <HeaderNavlinks href="/services">SERVICES</HeaderNavlinks>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/industry">INDUSTRY</Link>
+                <HeaderNavlinks href="/industry">INDUSTRY</HeaderNavlinks>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/blog">BLOG</Link>
+                <HeaderNavlinks href="/blog">BLOG</HeaderNavlinks>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/about">ABOUT US</Link>
+                <HeaderNavlinks href="/about">ABOUT US</HeaderNavlinks>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/contact">CONTACT US</Link>
+                <HeaderNavlinks href="/contact">CONTACT US</HeaderNavlinks>
               </Grid>
             </Grid>
           )}
         </Toolbar>
-      </AppBar>
+      </MainAppBar>
 
       {/* Drawer for mobile view */}
       <DrawerServices

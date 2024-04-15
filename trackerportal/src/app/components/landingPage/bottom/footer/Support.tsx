@@ -1,17 +1,18 @@
-"use client";
 import React, { FC } from "react";
-import { Grid, Theme } from "@mui/material";
-  
+import { Box, Grid, Typography, styled } from "@mui/material";
 import Link from "next/link";
+
+const MainBox = styled(Box)(({ theme }) => ({
+  marginTop: "6rem",
+}));
 
 export interface SupportProps {
   text?: string;
 }
 
 const Support: FC<SupportProps> = (props) => {
-
   return (
-    <div>
+    <MainBox>
       <Grid
         container
         spacing={1}
@@ -22,6 +23,11 @@ const Support: FC<SupportProps> = (props) => {
         wrap="wrap"
         color="white"
       >
+        <Grid item xs={12} md={2}>
+          <Typography variant="h4" color="white" gutterBottom>
+            Support
+          </Typography>
+        </Grid>
         <Grid item xs={12} md={2}>
           <Link href="/faqs">FAQ's</Link>
         </Grid>
@@ -35,7 +41,7 @@ const Support: FC<SupportProps> = (props) => {
           <Link href="/contact">CONTACT US</Link>
         </Grid>
       </Grid>
-    </div>
+    </MainBox>
   );
 };
 export default Support;

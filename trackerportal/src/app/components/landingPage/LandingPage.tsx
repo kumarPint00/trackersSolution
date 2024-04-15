@@ -26,7 +26,7 @@ const LandingPage: FC<LandingPageProps> = ( props ) => {
   <ClientsAndPartners/>
   <ContactForm/>
   <Footer/>
-  <CopyRights/>
+  {/* <CopyRights/> */}
   </>
   )
 }

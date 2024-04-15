@@ -1,18 +1,17 @@
-"use client";
 import React, { FC } from "react";
-import { Theme, Grid } from "@mui/material";
-  
+import { Grid, Typography, Box, styled } from "@mui/material";
 import Link from "next/link";
 
+const MainBox = styled(Box)(({ theme }) => ({
+  marginTop: "6rem",
+}));
 export interface CompanyProps {
   text?: string;
 }
 
 const Company: FC<CompanyProps> = (props) => {
-
-
   return (
-    <div>
+    <MainBox>
       <Grid
         container
         spacing={1}
@@ -21,8 +20,13 @@ const Company: FC<CompanyProps> = (props) => {
         alignItems="center"
         alignContent="center"
         wrap="wrap"
-        color='white'
+        color="white"
       >
+        <Grid item xs={12} md={2}>
+          <Typography variant="h4" color="white" gutterBottom>
+            Company
+          </Typography>
+        </Grid>
         <Grid item xs={12} md={2}>
           <Link href="/">HOME</Link>
         </Grid>
@@ -42,7 +46,7 @@ const Company: FC<CompanyProps> = (props) => {
           <Link href="/contact">CONTACT US</Link>
         </Grid>
       </Grid>
-    </div>
+    </MainBox>
   );
 };
 export default Company;

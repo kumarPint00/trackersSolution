@@ -1,41 +1,31 @@
 import React, { FC } from "react";
-import { Box, Typography, Theme, styled } from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import Image from "next/image";
 import logo from "../../../../../../public/logo.svg";
-
 
 const TopBox = styled(Box)(({ theme }) => ({
   borderRadius: "8px",
   color: "black",
   width: "100%",
-  maxWidth: "600px", 
-}))
-const ImageContainer = styled(Image)(({ theme }) => ({
-  color:'white'
-}))
+  maxWidth: "600px",
+}));
+
+const StyledImage = styled(Image)(({ theme }) => ({
+  color: "white",
+}));
 
 const TypographyText = styled(Typography)(({ theme }) => ({
-  color:'white'
-}))
+  color: "white",
+}));
 export interface AboutProps {
   text?: string;
 }
 
 const About: FC<AboutProps> = (props) => {
-
   return (
-    <TopBox
-    >
-      <ImageContainer
-        src={logo}
-        alt="logo"
-        height={100}
-        width={100}
-      />
-      <TypographyText
-        variant="body1"
-        color="initial"
-      >
+    <TopBox>
+      <StyledImage src={logo} alt="logo" height={100} width={100} />
+      <TypographyText variant="body1" color="initial">
         TRACKERS is an all-in-one fleet performance management solution.
         Dedicated to clients managing fleets in UAE and Saudi Arabia in various
         sectors including Refrigerated Cargo, Ready Mix Industry, Waste

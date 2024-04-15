@@ -1,32 +1,29 @@
 import React, { FC } from "react";
-import { Theme, Grid, Box, Typography } from "@mui/material";
-  
+import { Box, styled } from "@mui/material";
+
 import Image from "next/image";
-import banner from '../../../../../../public/banner1.svg'
+import banner from "../../../../../../public/banner1.svg";
 
-
-
+const MainBox = styled(Box)(({ theme }) => ({
+  position: "relative",
+  marginTop: "6rem",
+}));
 export interface BannerProps {
   text?: string;
 }
 
 const Banner: FC<BannerProps> = (props) => {
-
   return (
-    <Box
-      width="100%" 
-      display="flex"
-      justifyContent="center" 
-      alignItems="center"
-      margin={0} 
-      padding={0}  
-    >
+    <MainBox>
       <Image
         src={banner}
         alt="banner1"
-        layout="fill" 
+        style={{
+          height: "100%",
+          width: "100%",
+        }}
       />
-    </Box>
+    </MainBox>
   );
 };
 
